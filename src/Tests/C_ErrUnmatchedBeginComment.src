@@ -1,0 +1,5 @@
+# Scanner, each block comment should be closed again
+write 17;
+
+(* Comment (* Comment *)
+

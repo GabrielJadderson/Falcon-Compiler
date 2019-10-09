@@ -1,0 +1,20 @@
+# Test of lazy AND operator
+# If the AND operator is lazy, the test will terminate
+var b : bool;
+
+func c () : bool
+  var d : int;
+  d = 0;
+  while ( !b ) do
+  {
+    d = d + 1;
+    b = false;
+  }
+  b = false;
+  return false;
+end c
+
+b = true;
+
+if ( c() && c() ) then write 1; else write 0;
+

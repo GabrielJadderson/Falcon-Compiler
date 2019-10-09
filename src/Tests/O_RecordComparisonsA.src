@@ -1,0 +1,19 @@
+# Typecheck of use of null and records, null should be a valid value 
+# for a record, a record type should be compatible with it self
+type recordType = record of {
+                    x: int,
+                    y: int
+                  };
+
+var p1 : recordType;
+var p2 : recordType;
+
+allocate p1;
+p2 = null;
+
+if(p2 == null) then write 0;
+
+p1 = p2;
+
+if(p1 == null) then write 1;
+

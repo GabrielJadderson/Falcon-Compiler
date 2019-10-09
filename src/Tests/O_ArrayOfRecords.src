@@ -1,0 +1,31 @@
+# Code generation for arrays and records, nesting
+var a : array of record of {n : int, m : bool  };
+var i : int, total : int;
+
+allocate a of length 7;
+
+i = 0;
+while ( i < 7) do 
+{
+    allocate a[i];
+    i = i + 1;
+} 
+
+i = 0;
+while ( i < 7) do 
+{
+    a[i].n = i;
+    a[i].m = false;
+    i = i + 1;
+} 
+
+i = 0;
+total = 0;
+while ( i < 7) do 
+{
+    total = total + a[i].n;
+    i = i + 1;
+} 
+
+write total;
+

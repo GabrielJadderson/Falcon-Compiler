@@ -1,0 +1,10 @@
+# Typecheck and code generation for arrays, array with elements of its own
+# type
+type a = array of a;
+
+var b : a;
+
+allocate b of length 10;
+
+write |b|;
+

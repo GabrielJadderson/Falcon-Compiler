@@ -1,0 +1,20 @@
+# Typecheck and code generation, returning records from functions
+type recordType = record of {
+                    x: int,
+                    y: int
+                  };
+
+func a(x : int, y : int) : recordType
+  var p2 : recordType;
+  allocate p2;
+  p2.x = x;
+  p2.y = y;
+  return p2;
+end a
+
+var p1 : recordType;
+
+p1 = a(10,2);
+
+write p1.x / p1.y;
+

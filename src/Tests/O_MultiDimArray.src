@@ -1,0 +1,38 @@
+# Code generation, arrays of arrays
+type intArray = array of int;
+type intArrayArray = array of intArray;
+
+var a : intArrayArray, i : int, j : int, sum : int;
+
+allocate a of length 5;
+
+i = 0;
+while (i < |a|) do
+{
+  allocate a[i] of length 5;
+  j = 0;
+  while (j < |a[i]|) do
+  {
+    a[i][j] = i+j;
+    j = j+1;
+  } 
+  i = i+1;
+} 
+
+sum = 0;
+i = 0;
+while (i < |a|) do
+{
+  j = 0;
+  while (j < |a[i]|) do
+  {
+    sum = sum + a[i][j];
+    j = j+1;
+  }
+  i = i+1;
+}
+
+
+(*** Giver sum 100 ***)
+
+write sum;

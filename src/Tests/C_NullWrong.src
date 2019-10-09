@@ -1,0 +1,8 @@
+# Typecheck of use of null, that the type of null is not compatible with
+# the integer type
+var a: array of int;
+var b: int;
+
+allocate a of length 10;
+b = null;
+write 42;

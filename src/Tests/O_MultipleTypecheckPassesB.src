@@ -1,0 +1,19 @@
+# Typecheck of types, mutual recursive types
+# Can only be handled if multiple passes are made
+type a = record of {f1 : int , f2 : b};
+type b = record of {f1 : int , f2 : a};
+
+var v1 : a, v2 : b;
+
+allocate v1;
+allocate v2;
+
+v1.f2 = v2;
+v2.f2 = v1;
+
+v1.f1 = 1;
+v2.f1 = 2;
+
+write v2.f2.f1;
+write v1.f2.f1;
+

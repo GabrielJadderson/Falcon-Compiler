@@ -1,0 +1,6 @@
+# Check of return statements, a return statement in the main functino
+# should not be allowed
+var i:int;
+i = 42;
+
+return i;

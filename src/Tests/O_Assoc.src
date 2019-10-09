@@ -1,0 +1,6 @@
+# Parsing and code generation of expressions, associativity
+write 10-2*2;
+write 24/4*2;
+write 100/2/5/10;
+write 4*5-3*6;
+

@@ -1,0 +1,23 @@
+# Code generation, functions modifying their arguments
+func b(cond : bool) : int
+  func c(x : int) : int
+    var x2 : int;
+    x2 = 1;
+    while (x > 0) do
+    {
+      x = x - 1;
+      x2 = x2 * 2;
+    }
+    cond = false;
+    return x2;
+  end c
+  var q : int;
+  while ( cond ) do
+  {
+    q = c(5);
+  }
+  return q;
+end b
+
+write b(true);
+

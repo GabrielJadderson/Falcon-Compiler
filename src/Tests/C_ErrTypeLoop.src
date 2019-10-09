@@ -1,0 +1,27 @@
+# Typecheck of type definitions, that each type is defined as a proper type
+type c1 = d1;
+type d1 = c1;
+type a1 = c1;
+
+type a2 = c2;
+type c2 = d2;
+type d2 = c2;
+
+var v1: a1;
+var y1: c1;
+
+var v2: a2;
+var y2: c2;
+
+write 3;
+
+# Typecheck of function calls, that the number of arguments is not lower
+# than the required number of arguments
+func myFunc(a : int) : int
+{
+  return 10;
+}
+end myFunc
+
+(* #Antal parametre forkert *)
+write myFunc();

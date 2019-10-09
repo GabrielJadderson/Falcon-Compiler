@@ -1,0 +1,12 @@
+# Parsing of absolute value operator, the last statement might be
+# problematic to parse
+func negativeSquare( n : int ) : int
+    return (0-1) * n *n;
+end negativeSquare
+
+var a : int;
+
+a = negativeSquare(2);
+write |a|;
+write |a+a|;
+write ||a|+a|;

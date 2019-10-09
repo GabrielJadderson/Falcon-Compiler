@@ -1,0 +1,4 @@
+# Code generation of arrays, length
+var a : array of int;
+allocate a of length 7;
+write |a|;

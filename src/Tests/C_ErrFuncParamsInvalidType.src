@@ -1,0 +1,10 @@
+# Typecheck of function call, that the type of the arguments are compatible 
+# with the type specified in the function definition
+func myFunc(a : int, b : int, c : int) : int
+{
+  return a + b + c;
+}
+end myFunc
+
+write myFunc(4, true, 4);
+

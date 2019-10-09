@@ -1,0 +1,159 @@
+
+type z = array of int;
+var w:z, p:z, x:z, y:z;
+var dummy:int, counter:int, m:int, n:int, fp:int, fw:int, fe:int, mybool:bool;
+
+var rand:int, a:int, b:int, modulo:int; 
+
+func BKnap(k:int, cp:int, cw:int) : int
+var dummy:int, counter:int;
+{
+  if(cw+w[k] <= m) then
+  {
+    y[k] = 1;
+    if(k < n-1) then dummy = BKnap(k+1, cp+p[k], cw+w[k]);
+    if((cp+p[k] > fp) && (k == n-1)) then
+    {
+      fp = cp+p[k];
+      fw = cw+w[k];
+      counter = 0;
+      while(counter <= k) do
+      {
+        x[counter] = y[counter];
+        counter = counter+1;
+      }
+    }
+  }
+  if(Bound(cp, cw, k) >= fp) then
+  {
+    y[k] = 0;
+    if(k < n-1) then dummy = BKnap(k+1, cp, cw);
+    if((cp > fp) && (k == n-1)) then
+    {
+      fp = cp;
+      fw = cw;
+      counter = 0;
+      while(counter <= k) do
+      {
+        x[counter] = y[counter];
+        counter = counter+1;
+      }
+    }
+  }
+  return 0;
+}
+end BKnap
+
+func Bound(cp:int, cw:int, k:int) : int
+var b:int, c:int, counter:int;
+{
+  b = cp;
+  c = cw;
+  counter = k+1;
+  while (counter < n) do
+  {
+    c = c+w[counter];
+    if(c < m) then b = b+p[counter];
+    else return b+(1-(c-m)/w[counter])*p[counter];
+    counter = counter+1;
+  }
+  return b;
+}
+end Bound
+
+func NextRand(number:int, mult:int, incr:int, modulo:int) : int
+var temp:int;
+{
+  temp = number*mult+incr;
+  return temp - (temp/modulo)*modulo;
+}
+end NextRand
+
+func exchange(i : int, j : int) : bool
+var p_temp : int , w_temp : int;
+{
+  p_temp = p[i];
+  p[i] = p[j];
+  p[j] = p_temp;
+  w_temp = w[i];
+  w[i] = w[j];
+  w[j] = w_temp;
+  return true;
+}
+end exchange
+
+func quicksort(f : int, l : int) : bool
+var q : int, dummy : bool;
+{
+  if (f < l) then
+  {
+    q = partition(f,l);
+    dummy = quicksort(f,q-1);
+    dummy = quicksort(q+1,l);
+  }
+  return true;
+}
+end quicksort
+
+func partition(f : int, l : int) : int
+var p_elem : int, w_elem : int, i : int, j : int, dummy : bool;
+{
+  p_elem = p[l];
+  w_elem = w[l];  
+  i = f-1;
+  j = f;
+  while (j <= l-1) do
+  {
+    if (p[j]*w_elem >= p_elem*w[j]) then
+    {
+      i = i+1;
+      dummy = exchange(i,j);
+    }
+    j = j+1;
+  }
+  dummy = exchange(i+1,l);
+  return i+1;
+}
+end partition
+
+allocate w of length 1000;
+allocate p of length 1000;
+allocate x of length 1000;
+allocate y of length 1000;
+n = 1000;
+m = 600;
+fp = 0-1;
+fw = 0;
+fe = 0;
+
+rand = 1;
+a = 40;
+b = 3641;
+modulo = 729;
+
+counter = 0;
+while(counter < n) do
+{
+  rand = NextRand(rand, a, b, modulo);
+  w[counter] = rand/20+10;
+  rand = NextRand(rand, a, b, modulo);
+  p[counter] = rand/90+1; 
+  x[counter] = 0;
+  y[counter] = 0;
+  counter = counter+1;
+}
+
+mybool = quicksort(0,n-1);
+
+dummy = BKnap(0,0,0);
+
+counter = 0;
+while(counter < n) do
+{
+  if(x[counter] == 1) then fe = fe+1;
+  counter = counter+1;
+}
+write(fe);
+write(fp);
+write(fw);
+

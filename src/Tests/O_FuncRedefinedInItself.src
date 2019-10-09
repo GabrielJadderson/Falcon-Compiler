@@ -1,0 +1,17 @@
+# Typecheck and code generation, functions redefined inside themselfs
+func b(d : int) : int
+  func b(e : bool) : int
+    if (e == true) then
+    {
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  end b
+  return d + b(true);
+end b
+
+write b(5);
+

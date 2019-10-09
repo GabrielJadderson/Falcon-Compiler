@@ -1,0 +1,8 @@
+# Typecheck, check a record is a set
+# If the test succeeds, a record is a set
+# If not, a record is a tuple
+type r1 = record of { x : int, y : array of bool };
+type r2 = record of { y : array of bool, x : int };
+var v1 : r1, v2 : r2;
+v1 = v2;
+write 42;

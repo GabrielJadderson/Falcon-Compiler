@@ -1,0 +1,7 @@
+# Typecheck of use of null, null should be a valid value for an array
+var a: array of int;
+var b: int;
+
+allocate a of length 10;
+a = null;
+write 42;

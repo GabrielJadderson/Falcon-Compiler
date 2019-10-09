@@ -1,0 +1,18 @@
+# Typecheck of types, the three tpye definitions can only be handled
+# if multiple passes of the code is made
+# If only one pass is made, then a will be undefined when a1 is defined
+var v1 : a1, v2 : a2;
+
+type a1 = a;
+type a = int;
+type a2 = a;
+
+var v3 : a1, v4 : a2;
+
+
+v1 = 21;
+v2 = 21;
+v3 = 22;
+v4 = 22;
+write v1 / v2 + v3 / v4;
+

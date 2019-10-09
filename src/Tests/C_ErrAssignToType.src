@@ -1,0 +1,6 @@
+# Check typechecking of assignments, that the lhs is not a type
+type a = int;
+
+a = 5;
+write a;
+

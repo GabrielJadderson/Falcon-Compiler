@@ -1,0 +1,14 @@
+# Typecheck, explicit return type redefined inside function
+type v = int;
+var myVar : v;
+
+func myFunc(a : int) : v
+  type v = bool;
+  var v2 : v;
+  v2 = true;
+  return 10;
+end myFunc
+
+myVar = myFunc(2);
+write myVar;
+

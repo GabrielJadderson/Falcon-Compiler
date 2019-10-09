@@ -1,0 +1,88 @@
+# Typecheck and code generation, realistic example of use of records
+type userElem = record of { a : int, b : bool, c : int };
+type setElem = record of { value : userElem , next : setElem};
+
+var set : setElem;
+var e1 : userElem, e2 : userElem, e3 : userElem;
+
+func insert(set : setElem, value : userElem) : setElem
+  func initSetElem(value : userElem) : setElem
+    var temp : setElem;
+    allocate temp;
+    temp.next = null;
+    temp.value = value;
+    return temp;
+  end initSetElem
+
+  var temp : setElem;
+
+  if(isIn(set,value) == 1) then return set;
+
+  temp =  initSetElem(value);
+  temp.next = set;
+  return temp;
+end insert
+
+func isIn(set : setElem, value : userElem) : int
+  var temp : setElem;
+  temp = set;
+  while (temp != null) do
+  {
+    if(temp.value == value) then return 1;
+    temp = temp.next;
+  }
+  return 0;
+end isIn
+
+func delete(set : setElem, value : userElem) : setElem
+  var temp : setElem;
+
+  temp = set;
+
+  if ( temp == null ) then return null;
+  if ( temp.value == value ) then return temp.next;
+  while (temp.next != null) do
+  {
+    if(temp.next.value == value) then
+    {
+      temp.next = temp.next.next;
+      return set;
+    }
+    temp = temp.next;
+  }
+  return set;
+end delete
+
+func sizeOf(set : setElem) : int
+  var temp : setElem, size : int;
+  temp = set;
+  size = 0;
+  while (temp != null) do
+  {
+    temp = temp.next;
+    size = size + 1;
+  } 
+  return size;
+end sizeOf
+
+set = null;
+allocate e1;
+allocate e2;
+allocate e3;
+
+write(sizeOf(set));
+set = insert(set,e1);
+set = insert(set,e2);
+set = insert(set,e3);
+write sizeOf(set);
+write isIn(set,e1);
+set = delete(set,e1);
+set = delete(set,e1);
+write sizeOf(set);
+write isIn(set,e1);
+write isIn(set,e2);
+write isIn(set,e3);
+set = delete(set,e3);
+set = delete(set,e2);
+write sizeOf(set);
+

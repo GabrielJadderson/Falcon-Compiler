@@ -1,0 +1,11 @@
+# Code generation, using function calls as function arguemtns
+func b(d : int) : int
+  return d + d;
+end b
+
+func c(i : int) : int
+  return i * i;  
+end c
+
+write b(c(5));
+

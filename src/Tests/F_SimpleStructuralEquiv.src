@@ -1,0 +1,8 @@
+# Typecheck, simple test for precense of structural equivalence
+# If the test passes, some structural equivalence check is implemented
+type r1 = record of { data : int, next : r1 };
+type r2 = record of { data : int, next : r2 };
+var v1 : r1, v2 : r2;
+v2 = null;
+v1 = v2;
+write 42;

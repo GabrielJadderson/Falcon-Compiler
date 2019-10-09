@@ -1,0 +1,28 @@
+# Code generation for the comparison operator and array assignment
+# array vs. array and array vs. null
+type myArr = array of int;
+
+var a : myArr;
+var b : myArr;
+var temp : myArr;
+
+allocate a of length 20;
+allocate b of length 10;
+
+a[19] = 19 * 10;
+b[9] = 9 * 10;
+
+write a[19];
+write b[9];
+
+temp = a;
+a = b;
+b = temp;
+
+write a[9];
+write b[19];
+
+if( b == temp ) then write 1; else write 0;
+b = null;
+if( b == temp ) then write 1; else write 0;
+

@@ -1,0 +1,10 @@
+# Code generation, realistic example of recursive code
+func factorial(n: int): int
+   if (n == 0) || (n == 1) then
+      return 1;
+   else
+      return n * factorial(n-1);
+end factorial
+
+write factorial(5);
+

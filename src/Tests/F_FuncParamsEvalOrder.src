@@ -1,0 +1,17 @@
+# Test of evaluation order of function arguments
+# If the evaluation order is from left to right, this test will pass 
+var a : int;
+
+func b(d1 : int, d2 : int) : int
+  return d2 - d1;
+end b
+
+func c(i : int) : int
+  a = a + i;
+  return a;  
+end c
+
+a = 1;
+a = b(c(a), c(a));
+write a;
+

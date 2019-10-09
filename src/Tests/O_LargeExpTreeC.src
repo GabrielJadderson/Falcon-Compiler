@@ -1,0 +1,33 @@
+# Code generation, large expressions with variables initialized by
+# function calls
+func echo(i : int, j : int) : int
+  if ( j == 0 ) then
+    return i;
+  else
+    return echo(i, j-1);
+end echo
+
+var i1 : int, i2 : int, i3 : int, i4 : int, i5 : int, i6 : int, i7 : int, i8 : int, i9 : int, i10 : int, i11 : int, i12 : int, i13 : int, i14 : int, i15 : int, i16 : int, i17 : int, i18 : int, i19 : int, i20 : int;
+
+i1 = echo(1,3);
+i2 = echo(2,3);
+i3 = echo(3,3);
+i4 = echo(4,3);
+i5 = echo(5,3);
+i6 = echo(6,3);
+i7 = echo(7,3);
+i8 = echo(8,3);
+i9 = echo(9,3);
+i10 = echo(10,3);
+i11 = echo(11,3);
+i12 = echo(12,3);
+i13 = echo(13,3);
+i14 = echo(14,3);
+i15 = echo(15,3);
+i16 = echo(16,3);
+i17 = echo(17,3);
+i18 = echo(18,3);
+i19 = echo(19,3);
+i20 = echo(20,3);
+
+write (i1 * (i2 + (i3 * (i4 + (i5 * (i6 + (i7 * (i8 + (i9 * i10))))))))) + (((((((((i11 * i12) + i13) * i14) + i15) * i16) + i17) * i18) + i19) * i20);

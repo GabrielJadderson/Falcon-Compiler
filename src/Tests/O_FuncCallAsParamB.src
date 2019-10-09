@@ -1,0 +1,18 @@
+# Code generation, going nuts with function calls in function calls
+func echo(i : int, j : int) : int
+  if ( j == 0 ) then
+    return i;
+  else
+    return echo(i, j-1);
+end echo
+
+func b(d1 : int, d2 : int) : int
+  return d1 / d2;
+end b
+
+func c(i1 : int, i2 : int, i3 : int) : int
+  return i1 / i2 / i3;
+end c
+
+write b(c(echo(60,3),echo(2,3),echo(5,3)),c(echo(100,3),echo(25,3),echo(2,3)));
+

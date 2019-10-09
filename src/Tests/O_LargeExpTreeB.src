@@ -1,0 +1,25 @@
+# Code generation, large expressions with variables
+var i1 : int, i2 : int, i3 : int, i4 : int, i5 : int, i6 : int, i7 : int, i8 : int, i9 : int, i10 : int, i11 : int, i12 : int, i13 : int, i14 : int, i15 : int, i16 : int, i17 : int, i18 : int, i19 : int, i20 : int;
+
+i1 = 1;
+i2 = 2;
+i3 = 3;
+i4 = 4;
+i5 = 5;
+i6 = 6;
+i7 = 7;
+i8 = 8;
+i9 = 9;
+i10 = 10;
+i11 = 11;
+i12 = 12;
+i13 = 13;
+i14 = 14;
+i15 = 15;
+i16 = 16;
+i17 = 17;
+i18 = 18;
+i19 = 19;
+i20 = 20;
+
+write (i1 * (i2 + (i3 * (i4 + (i5 * (i6 + (i7 * (i8 + (i9 * i10))))))))) + (((((((((i11 * i12) + i13) * i14) + i15) * i16) + i17) * i18) + i19) * i20);

@@ -1,0 +1,21 @@
+# Typecheck of types and statements, mutual recursive functions
+# can only be handled by multiple typecheck passes
+func a(p1 : int, p2 : int) : int
+  if( p2 == 0) then
+    return p1;
+  else
+    return b(p1, p2 - 1);
+end a
+
+func b(p1 : int, p2 : int) : int
+  if( p2 == 0) then
+    return p1;
+  else
+    return a(p1, p2 - 1);
+end b
+
+write a(1,5);
+write a(2,6);
+write b(3,5);
+write b(4,6);
+

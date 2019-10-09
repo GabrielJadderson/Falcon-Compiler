@@ -1,0 +1,8 @@
+# Scanner, test of line comments
+# Simpel test 
+# for enliniers kommentarer
+
+write 42;
+write 42; # slut med testen
+
+

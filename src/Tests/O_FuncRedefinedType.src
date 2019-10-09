@@ -1,0 +1,17 @@
+# Typecheck, redefinition of implicit type
+type a = int;
+type b = array of int;
+
+var v1 : a;
+
+func d() : int
+  type b = int;
+  var v3 : b;
+  v3 = v1;
+  write v3;
+  return v3;
+end d
+
+v1 = 42;
+write d();
+

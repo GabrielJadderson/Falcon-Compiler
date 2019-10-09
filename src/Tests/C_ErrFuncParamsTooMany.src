@@ -1,0 +1,10 @@
+# Typecheck of function calls, that the number of arguments is not higher
+# than the required number of arguments
+func myFunc(a : int) : int
+{
+  return 10;
+}
+end myFunc
+
+(* #Antal parametre forkert *)
+write myFunc(1, 2);

@@ -1,0 +1,15 @@
+# Code generation for the absolute value operator
+var a : int;
+var b : int;
+var c : int;
+
+a = 0 - 7;
+b = 6 - 8;
+c = 6;
+
+write a;
+write b;
+write |a|;
+write |b|;
+write |a| + |c|;
+write |a+c|;

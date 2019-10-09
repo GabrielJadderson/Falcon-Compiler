@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/tmp/$1-a.out > /tmp/$1-output
