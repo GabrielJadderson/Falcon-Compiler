@@ -1,0 +1,23 @@
+var a : array of int;
+var b : array of int;
+var c : array of int;
+var d : array of int;
+var e : array of int;
+var f : array of int;
+
+allocate a of length 1;
+allocate b of length 20;
+allocate c of length 42;
+allocate d of length 500;
+allocate e of length 1000;
+allocate f of length 1337;
+
+write |a|;
+write |b|;
+write |c|;
+write |d|;
+write |e|;
+write |f|;
+
+
+

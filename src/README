@@ -1,0 +1,30 @@
+
+exp.zip contains all files.
+
+----------
+
+Run flex, bison, and compile by writing the following on the command line:
+
+  make -f Makefile
+
+To run, write the following on the command line:
+
+  ./exp
+
+Now you can type an expression ended by $ and <Ctrl>-D.
+Example (leaving out the <Ctrl>-D):
+
+  3*4-1/x$
+
+
+To run the Test files simply pipe them via stdin.
+
+  ./exp < inputB.txt
+
+To run with extra debug information, -d must be passed in as parameter.
+  
+  ./exp -d
+  or 
+  ./exp -d < inputB.txt
+
+Included test files are inputA.txt and inputB.txt

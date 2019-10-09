@@ -1,0 +1,62 @@
+
+
+# Basic test_________________________________
+
+var a : int;
+var b : int;
+var c : int;
+var d : int;
+
+a=0;
+a+=1;
+write a;
+
+b = 3;
+b -= 1;
+write b;
+
+c = 6;
+c /= 2;
+write c;
+
+d = 2;
+d *= 2;
+write d;
+
+a++;
+b--;
+c++;
+d--;
+write a;
+write b;
+write c;
+write d;
+
+#Should write 1 2 3 4
+#____________________________________________
+
+
+
+#  Function test_________________________________
+
+(*var a: int;
+
+func test(b : int) : int
+	
+	return b += 1;
+	
+end test
+
+
+func test2(c : int) : int
+	
+	return c;
+
+end test2
+
+write test(1);
+write test2(2) += 1; *)
+
+#Should write 2 3
+#____________________________________________
+

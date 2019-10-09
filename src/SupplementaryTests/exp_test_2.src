@@ -1,0 +1,116 @@
+#equality 1 should pass.
+if (5 == 5) then
+{
+	write 1;
+}
+
+if (5 == 4) then
+{
+	write 0;
+}
+
+#non-equality. 1 should pass.
+if (5 != 5) then
+{
+	write 0;
+}
+
+if (5 != 4) then
+{
+	write 1;
+}
+
+
+#greater. 1 should pass.
+if (4 > 5) then
+{
+	write 0;
+}
+if (5 > 5) then
+{
+	write 0;
+}
+if (5 > 4) then
+{
+	write 1;
+}
+
+#lesser. 1 should pass.
+if (4 < 5) then
+{
+	write 1;
+}
+if (5 < 5) then
+{
+	write 0;
+}
+if (5 < 4) then
+{
+	write 0;
+}
+
+#greater-equal. 2 should pass.
+if (4 >= 5) then
+{
+	write 0;
+}
+if (5 >= 5) then
+{
+	write 1;
+}
+if (5 >= 4) then
+{
+	write 1;
+}
+
+
+#lesser-equal. 2 should pass.
+if (4 <= 5) then
+{
+	write 1;
+}
+if (5 <= 5) then
+{
+	write 1;
+}
+if (5 <= 4) then
+{
+	write 0;
+}
+
+
+
+#AND. 1 should pass.
+if (true && true) then
+{
+	write 1;
+}
+if (true && false) then
+{
+	write 0;
+}
+
+if (false && false) then
+{
+	write 0;
+}
+
+#OR. 2 should pass.
+if (true || true) then
+{
+	write 1;
+}
+if (true || false) then
+{
+	write 1;
+}
+
+if (false || false) then
+{
+	write 0;
+}
+
+
+
+
+write 10;

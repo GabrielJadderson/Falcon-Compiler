@@ -1,0 +1,116 @@
+#equality 1 should pass.
+if (5 == 5) then
+{
+	write "equal pass. 5 == 5";
+}
+
+if (5 == 4) then
+{
+	write "equal fail. 5 == 4";
+}
+
+#non-equality. 1 should pass.
+if (5 != 5) then
+{
+	write "non-equal fail. 5 != 5";
+}
+
+if (5 != 4) then
+{
+	write "non-equal pass. 5 != 4";
+}
+
+
+#greater. 1 should pass.
+if (4 > 5) then
+{
+	write "greater fail. 4 > 5";
+}
+if (5 > 5) then
+{
+	write "greater fail. 5 > 5";
+}
+if (5 > 4) then
+{
+	write "greater pass. 5 > 4";
+}
+
+#lesser. 1 should pass.
+if (4 < 5) then
+{
+	write "lesser pass. 4 < 5";
+}
+if (5 < 5) then
+{
+	write "lesser fail. 5 < 5";
+}
+if (5 < 4) then
+{
+	write "lesser fail. 5 < 4";
+}
+
+#greater-equal. 2 should pass.
+if (4 >= 5) then
+{
+	write "greater-equal fail. 4 >= 5";
+}
+if (5 >= 5) then
+{
+	write "greater-equal pass. 5 >= 5";
+}
+if (5 >= 4) then
+{
+	write "greater-equal pass. 5 >= 4";
+}
+
+
+#lesser-equal. 2 should pass.
+if (4 <= 5) then
+{
+	write "lesser-equal pass. 4 <= 5";
+}
+if (5 <= 5) then
+{
+	write "lesser-equal pass. 5 <= 5";
+}
+if (5 <= 4) then
+{
+	write "lesser-equal fail. 5 <= 4";
+}
+
+
+
+#AND. 1 should pass.
+if (true && true) then
+{
+	write "AND pass. true && true";
+}
+if (true && false) then
+{
+	write "AND fail. true && false";
+}
+
+if (false && false) then
+{
+	write "AND fail. false && false";
+}
+
+#OR. 2 should pass.
+if (true || true) then
+{
+	write "OR pass. true || true";
+}
+if (true || false) then
+{
+	write "OR pass. true || false";
+}
+
+if (false || false) then
+{
+	write "OR fail. false || false";
+}
+
+
+
+
+write 10;

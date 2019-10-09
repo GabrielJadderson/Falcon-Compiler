@@ -1,0 +1,8 @@
+var a : int;
+
+a = 5;
+while (a != 0) do
+{
+	write a;
+	a--;
+}

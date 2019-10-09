@@ -1,0 +1,83 @@
+#######works###########
+#write 1;
+
+######works#############
+#write 1 + 1;
+#write 2*3;
+#write 4/2;
+#write 4-2;
+#write (4+5)*2;
+#
+#write true;
+#write false;
+#write 1 && 1;
+#write true && true;
+#write false && false;
+#write true && false;
+#write false || true;
+#write false || false;
+#write 5 == 5;
+#write 5 == 3;
+#write 5 != 3;
+#write 5 != 5;
+#write 5 > 3;
+#write 3 > 5;
+#write 3 < 5;
+#write 5 < 3;
+
+#write 5 >= 3;
+#write 3 >= 5;
+#write 3 >= 3;
+
+#write 3 <= 5;
+#write 5 <= 3;
+#write 5 <= 5;
+
+#write (true || false) || false;
+
+#######works######
+#if (5==5) then
+#{
+#	write 1;
+#}
+
+#######works#####
+#if (5 == 4) then
+#{
+#	write 1;
+#}
+#else
+#{
+#	write 0;
+#}
+
+#######works#####
+#var a : int;
+#func factorial(x : int, y : int) : int
+#	func nFac() : int
+#		func nnFac() : int
+#			a = 7;
+#			#if(b == 8) then
+#			#{
+#			#	return 1;
+#			#}
+#			#else
+#			#{
+#			#	return 0;	
+#			#}
+#			return a;
+#		end nnFac
+#		return nnFac();
+#	end nFac
+#	return nFac();
+#	#return 0;
+#end factorial
+#
+#write factorial(3,8);
+
+#######works########
+#var a : int;
+
+#a = 1;
+
+#write a;

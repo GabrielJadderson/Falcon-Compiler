@@ -1,0 +1,38 @@
+
+
+write "The Answer is 42";
+write "Big Bada Boom";
+write (2*4)-2;
+
+
+#if statements
+if (5 == 4) then
+{
+	write "ERROR in if statement, this should not have been printed.";
+}
+
+if (5 == 5) then
+{
+	write "If statement works";
+}
+
+
+
+#if-else statements
+if (5 == 4) then
+{
+	write "ERROR in if-else stm 1, this should not have been printed.";
+}
+else
+{
+	write "if-else statmenet 1 works.";
+}
+
+if (5 == 5) then
+{
+	write "If-else statement 2 works.";
+}
+else
+{
+	write "ERROR in if-else stm 2, this should not have been printed.";
+}
